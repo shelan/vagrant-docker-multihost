@@ -44,7 +44,7 @@ Vagrant.configure(2) do |config|
     sudo apt-get -y install docker-engine
     usermod -a -G docker vagrant   ## add vagrant user to docker group
     sudo mkdir -p /etc/systemd/system/docker.service.d/ 
-    #sudo sh -c 'cat /vagrant/docker.conf >> /etc/systemd/system/docker.service.d/docker.conf'
+    sudo sh -c 'cat /vagrant/docker.conf >> /etc/systemd/system/docker.service.d/docker.conf'
     sudo systemctl daemon-reload
     sudo systemctl restart docker
     sudo systemctl status docker
